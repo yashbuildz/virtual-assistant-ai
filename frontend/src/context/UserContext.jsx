@@ -17,14 +17,14 @@ function UserContext({children}) {
         }
     }
 
-    const getGeminiResponse=async (command)=>{
-try {
-  const result=await axios.post(`${serverUrl}/api/user/asktoassistant`,{command},{withCredentials:true})
-  return result.data
-} catch (error) {
-  console.log(error)
+  const getGeminiResponse = async (command) => {
+  try {
+    const result = await axios.post(`${serverUrl}/api/user/asktoassistant`, { command }, { withCredentials: true })
+   return result.data  // this is already correct since controller sends flat object now
+  } catch (error) {
+    console.log(error)
+  }
 }
-    }
 
     useEffect(()=>{
 handleCurrentUser()
