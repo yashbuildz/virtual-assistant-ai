@@ -9,10 +9,13 @@ import cookieParser from "cookie-parser"
 import userRouter from "./routes/user.routes.js"
 import geminiResponse from "./gemini.js"
 
-
 const app=express()
 app.use(cors({
-  origin: "https://virtual-assistant-ai-s21f.vercel.app",
+  origin: [
+    "http://localhost:5173",
+    "https://virtual-assistant-ai-s21f-git-main-yashbuildzs-projects.vercel.app",
+    "https://virtual-assistant-ai-s21f.vercel.app"
+  ],
   credentials: true
 }))
 const port=process.env.PORT || 5000
